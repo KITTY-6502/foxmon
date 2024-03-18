@@ -3,17 +3,17 @@
 #
 .cpu 65c02
 
-.var char_timer $10
-.var line_buffer   $0200
-.var char_cur      $11
-.var line_buffer_i $12
-.var line_buffer_l $13
+.org [$0010]
+.var char_timer
+.var char_cur
+.var line_buffer_i
+.var line_buffer_l
+.var keyboard_cache 5
+.var line_cur 2
+.var serial_active
+.var cur_bank
 
-
-.var keyboard_cache $14
-.var line_cur       $20
-.var serial_active  $30
-.var cur_bank $31
+.val line_buffer   $0200
 
 .org [$1000]
 _nmi
